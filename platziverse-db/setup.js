@@ -1,11 +1,11 @@
 'use strict'
 
 const debug = require('debug')('platziverse:db:setup')
-const db = require('./');
-const chalk = require('chalk');
-const inquirer = require('inquirer');
+const db = require('./')
+const chalk = require('chalk')
+const inquirer = require('inquirer')
 
-const propmt = inquirer.createPromptModule();
+const propmt = inquirer.createPromptModule()
 
 async function setup () {
   const answer = await propmt([
@@ -16,8 +16,8 @@ async function setup () {
     }
   ])
 
-  if(!answer.setup) {
-      return console.log('Nothing happened :)')
+  if (!answer.setup) {
+    return console.log('Nothing happened :)')
   }
 
   const config = {
@@ -37,7 +37,7 @@ async function setup () {
 }
 
 function handleFatalError (err) {
-  console.error(`${chalk.red("[Fatal Error]")} ${err.message}`)
+  console.error(`${chalk.red('[Fatal Error]')} ${err.message}`)
   console.error(err.stack)
   process.exit(1)
 }

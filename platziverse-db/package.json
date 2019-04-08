@@ -4,6 +4,7 @@
   "description": "A Simple IoT Platform - DB Module",
   "main": "index.js",
   "scripts": {
+    "test": "SET DEBUG=platziverse:* && ava tests/ --verbose",
     "lint": "standard",
     "fix": "standard --fix",
     "setup": "SET DEBUG=platziverse:* && SET DB_PASS=dsjfkd && node setup.js"
@@ -19,11 +20,14 @@
   },
   "homepage": "https://github.com/yitodeveloper/platziverse#readme",
   "devDependencies": {
+    "ava": "^1.4.1",
+    "sqlite3": "^4.0.6",
     "standard": "^12.0.1"
   },
   "dependencies": {
     "chalk": "^2.4.2",
     "debug": "^4.1.1",
+    "defaults": "^1.0.3",
     "inquirer": "^6.2.2",
     "pg": "^7.9.0",
     "pg-hstore": "^2.3.2",
